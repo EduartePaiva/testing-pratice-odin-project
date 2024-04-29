@@ -1,4 +1,4 @@
-import { capitalize, reverseString } from "./projectCoolFunctions";
+import { calculator, capitalize, reverseString } from "./projectCoolFunctions";
 import { test, describe, expect } from "@jest/globals";
 
 describe("test capitalize function", () => {
@@ -21,5 +21,20 @@ describe("test reverseString function", () => {
 
     test("empty string case", () => {
         expect(reverseString("")).toBe("");
+    });
+});
+describe("Test calculator object", () => {
+    const calc = calculator;
+    test("add", () => {
+        expect(calc.add(10, 15)).toBe(10 + 15);
+    });
+    test("sub", () => {
+        expect(calc.subtract(10, 15)).toBe(10 - 15);
+    });
+    test("multiply", () => {
+        expect(calc.multiply(10, 15)).toBe(10 * 15);
+    });
+    test("divide", () => {
+        expect(calc.divide(10, 15)).toBe(10 / 15);
     });
 });
