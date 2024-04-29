@@ -1,0 +1,25 @@
+{
+    "name": "testing-practice-odin-project",
+    "version": "1.0.0",
+    "description": "testing project from odin project",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "test": "jest --watch"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@babel/core": "^7.24.4",
+        "@babel/preset-env": "^7.24.4",
+        "@eslint/js": "^9.1.1",
+        "@jest/globals": "^29.7.0",
+        "babel-jest": "^29.7.0",
+        "eslint": "^9.1.1",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-plugin-jsdoc": "^48.2.3",
+        "jest": "^29.7.0",
+        "prettier": "^3.2.5"
+    }
+}
