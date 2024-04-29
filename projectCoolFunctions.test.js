@@ -5,4 +5,8 @@ describe("test capitalize function", () => {
     test("capitalize my name", () => {
         expect(capitalize("eduarte")).toBe("Eduarte");
     });
+
+    test("Should return empty string if the input is empty", () => {
+        expect(capitalize("")).toBe("");
+    });
 });
