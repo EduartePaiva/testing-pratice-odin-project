@@ -42,4 +42,11 @@ describe("Test caesarCipher function", () => {
     test("wrapping from z to a", () => {
         expect(caesarCipher("abcdefghijklmnopqrstuvwxyz", 2)).toBe("cdefghijklmnopqrstuvwxyzab");
     });
+    test("wrapping and keeping the case", () => {
+        expect(caesarCipher("abcDefGhijklmnopqrstuvwxyz", 2)).toBe("cdeFghIjklmnopqrstuvwxyzab");
+    });
+    test("negative and over 26 numbers", () => {
+        expect(caesarCipher("abcdefghijklmnopqrstuvwxyz", -27)).toBe("bcdefghijklmnopqrstuvwxyza");
+        expect(caesarCipher("abcdefghijklmnopqrstuvwxyz", 27)).toBe("bcdefghijklmnopqrstuvwxyza");
+    });
 });
