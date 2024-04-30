@@ -1,4 +1,4 @@
-import { calculator, capitalize, reverseString } from "./projectCoolFunctions";
+import { caesarCipher, calculator, capitalize, reverseString } from "./projectCoolFunctions";
 import { test, describe, expect } from "@jest/globals";
 
 describe("test capitalize function", () => {
@@ -36,5 +36,10 @@ describe("Test calculator object", () => {
     });
     test("divide", () => {
         expect(calc.divide(10, 15)).toBe(10 / 15);
+    });
+});
+describe("Test caesarCipher function", () => {
+    test("wrapping from z to a", () => {
+        expect(caesarCipher("abcdefghijklmnopqrstuvwxyz", 2)).toBe("cdefghijklmnopqrstuvwxyzab");
     });
 });

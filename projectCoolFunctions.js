@@ -35,3 +35,11 @@ export const calculator = {
     multiply: (a, b) => a * b,
     divide: (a, b) => a / b,
 };
+
+/**
+ * cesar cipher, the shift factor will be thr absolute module of 26
+ * @param {string} string string parameter
+ * @param {number} shiftFactor shift factor
+ * @returns {string} the cipher string
+ */
+export function caesarCipher(string, shiftFactor) {}
