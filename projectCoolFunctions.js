@@ -113,3 +113,24 @@ export function caesarCipher(string, shiftFactor) {
     }
     return res;
 }
+/**
+ * takes an array of numbers and returns an object with the following properties: average, min, max, and length.
+ * @param {number[]} numbers numbers to analyze
+ * @returns {{average: number,min: number,max: number,length: number}} array analyzed
+ * @throws {Error} if array is empty
+ */
+export function analyzeArray(numbers) {
+    if (numbers.length === 0)
+        throw new Error("Can't compute an array with 0 elements, it has to have at least one");
+
+    const min = numbers.reduce((prev, num) => (prev > num ? num : prev), numbers[0]);
+    const max = numbers.reduce((prev, num) => (prev < num ? num : prev), numbers[0]);
+    const sum = numbers.reduce((prev, val) => prev + val, 0);
+
+    return {
+        min,
+        max,
+        length: numbers.length,
+        average: sum / numbers.length,
+    };
+}

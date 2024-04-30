@@ -1,4 +1,10 @@
-import { caesarCipher, calculator, capitalize, reverseString } from "./projectCoolFunctions";
+import {
+    analyzeArray,
+    caesarCipher,
+    calculator,
+    capitalize,
+    reverseString,
+} from "./projectCoolFunctions";
 import { test, describe, expect } from "@jest/globals";
 
 describe("test capitalize function", () => {
@@ -48,5 +54,27 @@ describe("Test caesarCipher function", () => {
     test("negative and over 26 numbers", () => {
         expect(caesarCipher("abcdefghijklmnopqrstuvwxyz", -27)).toBe("bcdefghijklmnopqrstuvwxyza");
         expect(caesarCipher("abcdefghijklmnopqrstuvwxyz", 27)).toBe("bcdefghijklmnopqrstuvwxyza");
+    });
+});
+describe("Test analyze function", () => {
+    test("test everything", () => {
+        expect(analyzeArray([1, 8, 3, 4, 2, 6])).toStrictEqual({
+            average: 4,
+            min: 1,
+            max: 8,
+            length: 6,
+        });
+    });
+
+    test("test array with one element", () => {
+        expect(analyzeArray([25])).toStrictEqual({
+            average: 25,
+            min: 25,
+            max: 25,
+            length: 1,
+        });
+    });
+    test("test array with zero element", () => {
+        expect(() => analyzeArray([])).toThrowError();
     });
 });
